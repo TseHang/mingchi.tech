@@ -18,7 +18,7 @@ const StyledHeader = styled(Layout.Header)`
   align-items: center;
 `;
 
-const StyledImage = styled.img`
+const Logo = styled.img`
   height: 2.5rem;
 `;
 
@@ -33,7 +33,7 @@ const NavTitle = styled.span`
 export default () => (
   <StyledHeader>
     <span>
-      <StyledImage src={getRelativePath('/static/logo.svg')} alt="logo" />
+      <Logo src={getRelativePath('/static/logo.svg')} alt="logo" />
       <NavTitle>{NAV_TITLE}</NavTitle>
     </span>
     <span>
