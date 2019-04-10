@@ -6,8 +6,8 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "export": "next build && next export",
-    "create:cname": "touch out/CNAME && echo 'your.com' >> out/CNAME",
-    "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && gh-pages -t -d out",
+    "create:cname": "touch out/CNAME && echo 'www.mingchi.tech' >> out/CNAME",
+    "deploy:github": "NODE_ENV=production DEPLOY_ENV=github yarn export && touch out/.nojekyll && yarn create:cname && gh-pages -t -d out",
     "clean": "rm -rf node_modules/.cache && rm -rf node_modules/gh-pages/.cache"
   },
   "dependencies": {
