@@ -31,8 +31,8 @@ var StyledHeader = Object(styled_components__WEBPACK_IMPORTED_MODULE_4__["defaul
   displayName: "Header__StyledHeader",
   componentId: "xcop5m-0"
 })(["position:fixed;z-index:2;width:100%;background-color:rgba(240,242,245,0.95);height:auto;padding:12px 36px;display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;"]);
-var StyledImage = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].img.withConfig({
-  displayName: "Header__StyledImage",
+var Logo = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].img.withConfig({
+  displayName: "Header__Logo",
   componentId: "xcop5m-1"
 })(["height:2.5rem;"]);
 var NavTitle = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].span.withConfig({
@@ -40,7 +40,7 @@ var NavTitle = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].span.wi
   componentId: "xcop5m-2"
 })(["line-height:2.5rem;display:inline-block;font-size:15px;margin-left:10px;transform:translateY(5px);"]);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(StyledHeader, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(StyledImage, {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(StyledHeader, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Logo, {
     src: Object(_utils__WEBPACK_IMPORTED_MODULE_6__["getRelativePath"])('/static/logo.svg'),
     alt: "logo"
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(NavTitle, null, _constants__WEBPACK_IMPORTED_MODULE_5__["NAV_TITLE"])), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -126,9 +126,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* head meta tag data */
 
-var SITE_TITLE = 'Visually Lab';
-var SITE_DESC = 'visualize everything';
-var SITE_URL = 'localhost';
+var SITE_TITLE = 'MingChi Tech';
+var SITE_DESC = 'MingChi Tech CO.';
+var SITE_URL = 'www.mingchi.tech';
 var FAVICON_PATH = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/favicon.ico');
 var LARGE_ICON_PATH = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/large-icon.png');
 var NAV_TITLE = 'nav title';
@@ -152,8 +152,15 @@ var env = function env(key) {
   var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
   return process.env[key] || defaultValue;
 };
-var GITHUB = env('DEPLOY_ENV') === 'github';
-var PROJ_NAME = env('PROJ_NAME');
+var GITHUB = env('DEPLOY_ENV') === 'github' || function () {
+  // if run `yarn start`, that will get window is reference error
+  try {
+    return window.location.host.includes('github.io');
+  } catch (_unused) {
+    return false;
+  }
+}();
+var PROJ_NAME = GITHUB ? 'mingchi.tech' : '';
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
