@@ -12,8 +12,9 @@ before_script:
 script:
 - yarn export
 - touch out/.nojekyll
+- yarn create:cname
 env:
-- DEPLOY_ENV=github PROJ_NAME="mingchi.tech"
+- DEPLOY_ENV="mingchi.tech" PROJ_NAME="mingchi.tech"
 deploy:
   provider: pages
   skip_cleanup: true
