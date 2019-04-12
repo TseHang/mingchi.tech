@@ -5,17 +5,17 @@ import { Layout } from 'antd';
 import { NAV_TITLE } from '@/constants';
 import { getRelativePath } from '@/utils';
 
-const StyledHeader = styled(Layout.Header)`
+const Header = styled(Layout.Header)`
   position: fixed;
-  z-index: 2;
-  width: 100%;
-  background-color: rgba(240, 242, 245, 0.95);
-  height: auto;
-  padding: 12px 36px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 12px 36px;
+  z-index: ${props => props.theme.z.header};
+  background-color: ${props => props.theme.colors.black};
 `;
 
 const Logo = styled.img`
@@ -31,7 +31,7 @@ const NavTitle = styled.span`
 `;
 
 export default () => (
-  <StyledHeader>
+  <Header>
     <span>
       <Logo src={getRelativePath('/static/logo.svg')} alt="logo" />
       <NavTitle>{NAV_TITLE}</NavTitle>
@@ -45,5 +45,5 @@ export default () => (
         <a>About</a>
       </Link>
     </span>
-  </StyledHeader>
+  </Header>
 );

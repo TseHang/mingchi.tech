@@ -8,6 +8,7 @@
     "paths": {
       "@/*": ["./*"]
     },
+    "typeRoots" : ["node_modules/@types", "./typings"],
     "strict": true,
     "moduleResolution": "node",
     "allowJs": true,
