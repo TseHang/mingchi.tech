@@ -1,61 +1,48 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Card, Icon } from 'antd';
+import styled from 'styled-components';
 
 import Section from '@/components/Section';
-import Layout from '@/layouts/Main';
-import { useAsyncEffect } from '@/utils';
+import MainLayout from '@/layouts/Main';
+import { getRelativePath } from '@/utils';
 
-type TUser = {
-  gender: string;
-  name: string;
-  region: string;
-  surname: string;
-  photo: string;
+const StyledSection = styled(Section)`
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+const Img = styled.img`
+  height: 8rem;
+  margin: 1em auto;
+`;
+
+const FamilyImg = styled.img`
+  height: 60%;
+  margin: 1em auto;
+`;
+
+const Motto = styled.div`
+  font-size: ${p => p.theme.fontSize.m};
+  margin: 1.5rem auto;
+  color: ${p => p.theme.colors.main};
+`;
+
+const HintArrow = styled.div`
+  position: absolute;
+  bottom: 1em;
+  color: ${p => p.theme.colors.main};
+`;
+
+const Index = () => {
+  return (
+    <MainLayout>
+      <StyledSection fullscreen first flex alignItems="center" mode="dark">
+        <Img src={getRelativePath('/static/logo-with-title.png')} />
+        <FamilyImg src={getRelativePath('/static/family/dad-horse.jpg')} />
+        <Motto>“Home is the best”</Motto>
+        <HintArrow>↓</HintArrow>
+      </StyledSection>
+      <Section>456</Section>
+    </MainLayout>
+  );
 };
 
-// You can replace it by your API_ROOT in .env
-// const API = `${process.env.API_ROOT}?ext`;
-const API = `https://uinames.com/api/?ext`;
-
-export default function Index() {
-  const [user, setUser] = useState<TUser>({
-    gender: '',
-    name: '',
-    region: '',
-    surname: '',
-    photo: '',
-  });
-
-  useAsyncEffect(async () => {
-    try {
-      const response = await axios.get(API);
-      setUser(response.data);
-    } catch (error) {
-      alert(error.message);
-    }
-  }, []);
-
-  const { gender, name, region, surname, photo } = user;
-  return (
-    <Layout>
-      <Section fullscreen={true}>
-        <Card
-          hoverable={true}
-          style={{ width: 200 }}
-          cover={photo && <img alt="avatar" src={photo} />}
-          actions={[
-            <Icon key={1} type="like" />,
-            <Icon key={2} type="heart" />,
-            <Icon key={3} type="instagram" />,
-          ]}
-        >
-          <Card.Meta
-            title={`${name} ${surname}`}
-            description={`${region}, ${gender}`}
-          />
-        </Card>
-      </Section>
-    </Layout>
-  );
-}
+export default Index;

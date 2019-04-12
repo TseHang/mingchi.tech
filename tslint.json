@@ -1,6 +1,7 @@
 {
   "extends": ["@visuallylab/tslint-config-frontend", "tslint-react-hooks"],
   "rules": {
+    "jsx-boolean-value": ["never"],
     "react-hooks-nesting": "error"
   }
 }
