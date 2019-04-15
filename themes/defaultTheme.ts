@@ -8,7 +8,8 @@ const theme: DefaultTheme = {
   colors: {
     black: '#000',
     main: '#aa9540',
-    secondary: '#343332',
+    secondary: '#7f7f7f',
+    lightGray: '#c9c9c9',
   },
 
   z: {
@@ -16,9 +17,9 @@ const theme: DefaultTheme = {
   },
 
   fontSize: {
-    s: '10px',
-    m: '18px',
-    l: '24px',
+    s: '.7em',
+    m: '1.25em',
+    l: '2em',
   },
 };
 

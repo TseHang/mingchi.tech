@@ -28,7 +28,7 @@ module.exports = withBundleAnalyzer(
       exportPathMap: function() {
         return {
           '/': { page: '/' },
-          '/about': { page: '/about' },
+          '/products': { page: '/products' },
         };
       },
       assetPrefix: GITHUB ? `/${PROJ_NAME}/` : '',

@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import '@/assets/style.less';
 
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import GlobalStyles from '@/themes/globalStyles';
 import defaultTheme from '@/themes/defaultTheme';
 import { SITE_TITLE } from '@/constants';
@@ -29,7 +30,7 @@ const MainLayout: React.FunctionComponent<TProps> = ({
       </Head>
       <Header />
       <Layout.Content>{children}</Layout.Content>
-      <Layout.Footer> Footer is here </Layout.Footer>
+      <Footer />
       <GlobalStyles />
     </Layout>
   </ThemeProvider>

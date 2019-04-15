@@ -1,23 +1,37 @@
+/**
+ * Style base device is mobile
+ */
+
 import { createGlobalStyle } from 'styled-components';
+import { media } from './helper';
 
 export default createGlobalStyle`
-  h1 {
-    font-size: 2.5em;
-    letter-spacing: 0.1em;
-    margin-top: 12px;
-  }
-  p {
-    font-size: 20px;
+  html, body {
+    overflow-x: hidden;
   }
 
-  @media only screen and (max-width: 768px) {
+  h1 {
+    font-weight: 600;
+    font-size: ${p => p.theme.fontSize.l};
+    letter-spacing: inherit;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 1.1em;
+  }
+
+  ol, ul {
+    list-style: none;
+  }
+
+  ${media('desktop')} {
     h1 {
-      font-size: 1.5em;
-      letter-spacing: inherit;
+      letter-spacing: 2px;
     }
+
     p {
-      font-weight: 300;
-      font-size: 20px;
+      font-size: 1em;
     }
   }
 `;

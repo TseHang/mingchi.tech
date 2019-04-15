@@ -14,12 +14,10 @@ export default styled.section<TSectionProps>`
   width: 100%;
   padding: ${props => (props.first ? props.theme.headerHeight : 0)}
     ${props => props.theme.headerHorizontalPadding} 8vh;
-  padding-bottom: 8vh;
   display: ${p => (p.flex ? 'flex' : 'block')};
   justify-content: center;
   align-items: ${props => props.alignItems || 'center'};
   text-align: ${props => props.textAlign || 'left'};
   height: ${props => (props.fullscreen ? '100vh' : 'initial')};
-  box-sizing: ${props => (props.fullscreen ? ' border-box' : 'initial')};
   background-color: ${p => (p.mode === 'dark' ? p.theme.colors.black : '#fff')};
 `;
