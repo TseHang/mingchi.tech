@@ -68,7 +68,7 @@ var ContentWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].d
 var IconWrapper = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "Footer__IconWrapper",
   componentId: "m9c4d4-2"
-})(["display:flex;align-items:center;margin-bottom:1em;line-height:1.2;> img{width:30px;height:30px;margin-right:2em;}> p{margin:0;}a{color:white;font-weight:300;text-decoration:underline;}"]);
+})(["display:flex;align-items:center;margin-bottom:1em;line-height:1.2;> img{width:30px;height:30px;margin-right:2em;}> p{margin:0;&.small{font-size:.95em;}}a{color:white;font-weight:300;text-decoration:underline;}"]);
 var Copyright = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "Footer__Copyright",
   componentId: "m9c4d4-3"
@@ -91,7 +91,9 @@ var Footer = function Footer() {
     color: "white"
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconWrapper, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
     src: Object(_utils__WEBPACK_IMPORTED_MODULE_5__["getRelativePath"])('/static/icon-location.svg')
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, "5F., No.13, Ln. 122, Wuhua St. Sanchong Dist., New Taipei City 24151, Taiwan (R.O.C.)")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconWrapper, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", {
+    className: "small"
+  }, "5F., No.13, Ln. 122, Wuhua St. Sanchong Dist., New Taipei City 24151, Taiwan (R.O.C.)")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(IconWrapper, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
     src: Object(_utils__WEBPACK_IMPORTED_MODULE_5__["getRelativePath"])('/static/icon-mail.svg')
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
     target: "_blank",
@@ -125,6 +127,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils */ "./utils.ts");
+/* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
+
 
 
 
@@ -133,14 +137,14 @@ __webpack_require__.r(__webpack_exports__);
 var Header = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(antd_lib_layout__WEBPACK_IMPORTED_MODULE_1___default.a.Header).withConfig({
   displayName: "Header",
   componentId: "xcop5m-0"
-})(["position:fixed;display:flex;justify-content:space-between;align-items:center;width:100%;height:", ";padding:12px ", ";z-index:", ";background-color:", ";border-bottom:solid 1px rgba(51,51,51,0.65);"], function (props) {
-  return props.theme.headerHeight;
-}, function (props) {
+})(["position:fixed;display:flex;justify-content:space-between;align-items:center;width:100%;height:55px;padding:12px ", ";z-index:", ";background-color:", ";border-bottom:solid 1px rgba(51,51,51,0.65);", "{height:", ";}"], function (props) {
   return props.theme.headerHorizontalPadding;
 }, function (props) {
   return props.theme.z.header;
 }, function (props) {
   return props.theme.colors.black;
+}, Object(_themes_helper__WEBPACK_IMPORTED_MODULE_5__["media"])('pad'), function (props) {
+  return props.theme.headerHeight;
 });
 var LogoTitle = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img.withConfig({
   displayName: "Header__LogoTitle",
@@ -155,7 +159,7 @@ var Logo = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img.withCon
     src: Object(_utils__WEBPACK_IMPORTED_MODULE_4__["getRelativePath"])('/static/logo-title.png'),
     alt: "logo-title"
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Logo, {
-    src: Object(_utils__WEBPACK_IMPORTED_MODULE_4__["getRelativePath"])('/static/logo.svg'),
+    src: Object(_utils__WEBPACK_IMPORTED_MODULE_4__["getRelativePath"])('/static/circle.svg'),
     alt: "logo"
   }));
 });
@@ -252,7 +256,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].section.withConfig({
   displayName: "Section",
   componentId: "q8302s-0"
-})(["position:relative;width:100%;padding:", " ", " 8vh;display:", ";justify-content:center;align-items:", ";text-align:", ";height:", ";background-color:", ";"], function (props) {
+})(["position:relative;width:100%;padding:", " ", " 8vh;display:", ";justify-content:center;align-items:", ";text-align:", ";height:", ";overflow-y:", ";background-color:", ";color:", ";"], function (props) {
   return props.first ? props.theme.headerHeight : 0;
 }, function (props) {
   return props.theme.headerHorizontalPadding;
@@ -264,8 +268,12 @@ __webpack_require__.r(__webpack_exports__);
   return props.textAlign || 'left';
 }, function (props) {
   return props.fullscreen ? '100vh' : 'initial';
+}, function (props) {
+  return props.fullscreen ? 'hidden' : 'scroll';
 }, function (p) {
   return p.mode === 'dark' ? p.theme.colors.black : '#fff';
+}, function (p) {
+  return p.mode === 'dark' ? '#fff' : 'inherit';
 }));
 
 /***/ }),
@@ -321,45 +329,6 @@ var Services = function Services() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Services);
-
-/***/ }),
-
-/***/ "./components/Slider.tsx":
-/*!*******************************!*\
-  !*** ./components/Slider.tsx ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./utils.ts");
-/* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
-
-
-
-
-var FamilyImg = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
-  displayName: "Slider__FamilyImg",
-  componentId: "sc-1jzorcp-0"
-})(["width:100%;margin:1em auto;", "{width:auto;height:60%;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_3__["media"])('pad'));
-var Description = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "Slider__Description",
-  componentId: "sc-1jzorcp-1"
-})(["margin:0.5rem auto 1rem;color:", ";"], function (p) {
-  return p.theme.colors.main;
-});
-
-var Slider = function Slider() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FamilyImg, {
-    src: Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRelativePath"])('/static/family/dad-horse.jpg')
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Description, null, "Home is the best"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Slider);
 
 /***/ }),
 
@@ -451,28 +420,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "productsTop", function() { return productsTop; });
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils */ "./utils.ts");
 
+var THERMAL_PRESS = [{
+  coverUri: '',
+  name: 'THERMAL PRESS MACHINE',
+  pdfUri: ''
+}];
+var MASKING = [{}];
+var SPRAYING = [];
+var HEALING = [];
+var AXIAL_TYPE = [];
+var TEST_SORTING = [];
+var FORMING_TAPPING = [];
+var LASER_MARKING = [];
 var productsTop = [{
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }, {
+  pdfUri: '',
   coverUri: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["getRelativePath"])('/static/product-cover.png'),
   name: 'test'
 }];
@@ -20913,13 +20902,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Section */ "./components/Section.tsx");
 /* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Title */ "./components/Title.tsx");
 /* harmony import */ var _components_ServicesList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ServicesList */ "./components/ServicesList.tsx");
-/* harmony import */ var _components_Slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Slider */ "./components/Slider.tsx");
-/* harmony import */ var _components_ProductList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ProductList */ "./components/ProductList.tsx");
-/* harmony import */ var _constants_products__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../constants/products */ "./constants/products.ts");
-/* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils */ "./utils.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../constants */ "./constants/index.ts");
-
+/* harmony import */ var _components_ProductList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ProductList */ "./components/ProductList.tsx");
+/* harmony import */ var _constants_products__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants/products */ "./constants/products.ts");
+/* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils */ "./utils.ts");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../constants */ "./constants/index.ts");
 
 
 
@@ -20934,31 +20921,34 @@ __webpack_require__.r(__webpack_exports__);
 var StyledSection = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_components_Section__WEBPACK_IMPORTED_MODULE_3__["default"]).withConfig({
   displayName: "pages__StyledSection",
   componentId: "ik9pgg-0"
-})(["flex-direction:column;justify-content:flex-start;", "{> p{font-size:1.2em;min-width:500px;width:60%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
+})(["flex-direction:column;", "{> p{font-size:1.2em;min-width:500px;width:60%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_8__["media"])('pad'));
+var ContentSection = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(StyledSection).withConfig({
+  displayName: "pages__ContentSection",
+  componentId: "ik9pgg-1"
+})(["display:block;", "{display:flex;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_8__["media"])('pad'));
+var slideInKeyframes = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{opacity:0;transform:translateY(100%);}to{opacity:1;transform:translateY(0);}"]);
 var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
   displayName: "pages__Logo",
-  componentId: "ik9pgg-1"
-})(["height:8rem;margin:1em auto;"]);
+  componentId: "ik9pgg-2"
+})(["opacity:0;height:8rem;margin:3em auto;animation:", " 2s .5s ease-in-out forwards;"], slideInKeyframes);
+var LogoTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
+  displayName: "pages__LogoTitle",
+  componentId: "ik9pgg-3"
+})(["font-size:3em;letter-spacing:3px;margin:0 auto;color:white;"]);
 var Motto = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "pages__Motto",
-  componentId: "ik9pgg-2"
+  componentId: "ik9pgg-4"
 })(["margin:3em auto;font-weight:bold;font-size:", ";color:", ";padding-left:1em;border-left:solid 8px ", ";", "{text-align:center;}"], function (p) {
   return p.theme.fontSize.l;
 }, function (p) {
   return p.theme.colors.main;
 }, function (p) {
   return p.theme.colors.main;
-}, Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
-var HintArrow = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "pages__HintArrow",
-  componentId: "ik9pgg-3"
-})(["position:absolute;bottom:1em;color:", ";"], function (p) {
-  return p.theme.colors.main;
-});
+}, Object(_themes_helper__WEBPACK_IMPORTED_MODULE_8__["media"])('pad'));
 var PartnersInfoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "pages__PartnersInfoWrapper",
-  componentId: "ik9pgg-4"
-})(["display:flex;flex-wrap:wrap;ol{list-style:disc;margin-bottom:0;}", "{padding-left:10%;}", "{width:75%;justify-content:space-between;> ol{width:50%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'), Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('desktop'));
+  componentId: "ik9pgg-5"
+})(["display:flex;flex-wrap:wrap;ol{list-style:disc;margin-bottom:0;}", "{padding-left:10%;}", "{width:75%;justify-content:space-between;> ol{width:50%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_8__["media"])('pad'), Object(_themes_helper__WEBPACK_IMPORTED_MODULE_8__["media"])('desktop'));
 
 var Index = function Index() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledSection, {
@@ -20968,23 +20958,29 @@ var Index = function Index() {
     alignItems: "center",
     mode: "dark"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
-    src: Object(_utils__WEBPACK_IMPORTED_MODULE_10__["getRelativePath"])('/static/logo-with-title.png')
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Slider__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HintArrow, null, "\u2193")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledSection, {
-    flex: true
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    src: Object(_utils__WEBPACK_IMPORTED_MODULE_9__["getRelativePath"])('/static/logo-with-title.png')
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LogoTitle, {
+    style: {
+      textAlign: 'center'
+    }
+  }, "All kinds of equipments here."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      textAlign: 'center'
+    }
+  }, "Having more than 10 years researching and developing experience in the global market.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentSection, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: "Our Services"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We provide all kinds of equipments you need, including AC/DC capacitor, lithium battery, connector, solar energy and a series of mature equipments."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Having more than 10 years researching and developing experience, our technology keeps more mature and excellent. We sell not only extraordinary well in the domestic market but also great in the global market, like European, Japan, Mainland, India, Malaysia, Sri Lanka etc."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ServicesList__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: "Products"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["productsTop"],
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_7__["productsTop"],
     showMore: true
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Motto, null, "We offer our customers all kinds of equipments"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
     title: "Strong Partners"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PartnersInfoWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_11__["partners"].slice(0, 5).map(function (text) {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PartnersInfoWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_10__["partners"].slice(0, 5).map(function (text) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: text
     }, text);
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_11__["partners"].slice(5).map(function (text) {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_10__["partners"].slice(5).map(function (text) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       key: text
     }, text);
@@ -21026,7 +21022,7 @@ __webpack_require__.r(__webpack_exports__);
 var theme = {
   borderRadius: '5px',
   headerHeight: '64px',
-  headerHorizontalPadding: '36px',
+  headerHorizontalPadding: '30px',
   colors: {
     black: '#000',
     main: '#aa9540',
@@ -21058,7 +21054,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helper */ "./themes/helper.ts");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  html, body {\n    overflow-x: hidden;\n  }\n\n  h1 {\n    font-weight: 600;\n    font-size: ", ";\n    letter-spacing: inherit;\n  }\n\n  p {\n    font-weight: 300;\n    font-size: 1.1em;\n  }\n\n  ol, ul {\n    list-style: none;\n  }\n\n  ", " {\n    h1 {\n      letter-spacing: 2px;\n    }\n\n    p {\n      font-size: 1em;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  html, body {\n    overflow-x: hidden;\n    overflow-y: scroll;\n  }\n\n  h1 {\n    font-weight: 600;\n    font-size: ", ";\n    letter-spacing: inherit;\n  }\n\n  p {\n    font-weight: 300;\n    font-size: 1.1em;\n  }\n\n  ol, ul {\n    list-style: none;\n  }\n\n  ", " {\n    h1 {\n      letter-spacing: 2px;\n    }\n\n    p {\n      font-size: 1em;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
