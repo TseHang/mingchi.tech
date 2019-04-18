@@ -1,19 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import MainLayout from '@/layouts/MainLayout';
 import Section from '@/components/Section';
 import Title from '@/components/Title';
 import ServicesList from '@/components/ServicesList';
-import Slider from '@/components/Slider';
 import ProductList from '@/components/ProductList';
-import { productsTop } from '@/constants/products';
+import Motto from '@/components/Motto';
+import { productsOnHome } from '@/constants/products';
 import { media } from '@/themes/helper';
 import { getRelativePath } from '@/utils';
 import { partners } from '@/constants';
 
-const StyledSection = styled(Section)`
+const StyledSection = styled(Section)<{ vertical?: boolean }>`
   flex-direction: column;
-  justify-content: flex-start;
 
   ${media('pad')} {
     > p {
@@ -24,28 +23,59 @@ const StyledSection = styled(Section)`
   }
 `;
 
-const Logo = styled.img`
-  height: 8rem;
-  margin: 1em auto;
-`;
-
-const Motto = styled.div`
-  margin: 3em auto;
-  font-weight: bold;
-  font-size: ${p => p.theme.fontSize.l};
-  color: ${p => p.theme.colors.main};
-  padding-left: 1em;
-  border-left: solid 8px ${p => p.theme.colors.main};
-
+const ContentSection = styled(StyledSection)`
+  display: block;
   ${media('pad')} {
-    text-align: center;
+    display: flex;
   }
 `;
 
-const HintArrow = styled.div`
-  position: absolute;
-  bottom: 1em;
-  color: ${p => p.theme.colors.main};
+const slideInKeyframes = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const showKeyframes = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const Logo = styled.img`
+  opacity: 0;
+  height: 10em;
+  margin: 2em auto;
+  animation: ${slideInKeyframes} 2s 0.5s ease-in-out forwards;
+
+  ${media('pad')} {
+    margin: 3em auto;
+    height: 13em;
+  }
+`;
+
+const LogoTitle = styled.h1`
+  font-size: 3em;
+  letter-spacing: 3px;
+  margin: 0 auto;
+  color: white;
+  opacity: 0;
+  line-height: 1.2;
+  animation: ${showKeyframes} 2.5s 0.5s ease-in-out forwards;
+
+  ${media('pad')} {
+    line-height: 1.5;
+  }
+`;
+
+const LogoDescription = styled.p`
+  opacity: 0;
+  text-align: center;
+  animation: ${showKeyframes} 2.5s 0.5s ease-in-out forwards;
 `;
 
 const PartnersInfoWrapper = styled.div`
@@ -74,12 +104,24 @@ const PartnersInfoWrapper = styled.div`
 const Index = () => {
   return (
     <MainLayout>
-      <StyledSection fullscreen first flex alignItems="center" mode="dark">
-        <Logo src={getRelativePath('/static/logo-with-title.png')} />
-        <Slider />
-        <HintArrow>↓</HintArrow>
+      <StyledSection
+        id="launch-section"
+        fullscreen
+        first
+        flex
+        alignItems="center"
+        mode="dark"
+      >
+        <Logo src={getRelativePath('/static/logo-with-title(white).svg')} />
+        <LogoTitle style={{ textAlign: 'center' }}>
+          We offer you all kinds of equipments.
+        </LogoTitle>
+        <LogoDescription>
+          Having more than 10 years researching and developing experience in the
+          global market.
+        </LogoDescription>
       </StyledSection>
-      <StyledSection flex>
+      <ContentSection>
         <Title title="Our Services" />
         <p>
           We provide all kinds of equipments you need, including AC/DC
@@ -96,8 +138,8 @@ const Index = () => {
         <ServicesList />
 
         <Title title="Products" />
-        <ProductList data={productsTop} showMore />
-        <Motto>We offer our customers all kinds of equipments</Motto>
+        <ProductList data={productsOnHome} showMore />
+        <Motto>We offer you all kinds of equipments</Motto>
 
         <Title title="Strong Partners" />
         <PartnersInfoWrapper>
@@ -112,7 +154,7 @@ const Index = () => {
             ))}
           </ol>
         </PartnersInfoWrapper>
-      </StyledSection>
+      </ContentSection>
     </MainLayout>
   );
 };

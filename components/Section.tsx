@@ -19,5 +19,7 @@ export default styled.section<TSectionProps>`
   align-items: ${props => props.alignItems || 'center'};
   text-align: ${props => props.textAlign || 'left'};
   height: ${props => (props.fullscreen ? '100vh' : 'initial')};
+  overflow-y: ${props => (props.fullscreen ? 'hidden' : 'auto')};
   background-color: ${p => (p.mode === 'dark' ? p.theme.colors.black : '#fff')};
+  color: ${p => (p.mode === 'dark' ? '#fff' : 'inherit')};
 `;

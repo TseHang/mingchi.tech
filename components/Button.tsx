@@ -5,6 +5,7 @@ type TButtonProps = {
 };
 
 const outlineStyle = css`
+  color: ${p => p.theme.colors.main};
   border: solid 1px;
   border-radius: 15px;
 
@@ -20,7 +21,7 @@ export default styled.div<TButtonProps>`
   color: ${p => p.color || p.theme.colors.lightGray};
   padding: 0.15em 0.5em;
   margin: 1em 0.5em;
-  transform: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 
   &:hover,
   &:focus {

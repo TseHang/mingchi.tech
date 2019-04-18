@@ -6,10 +6,6 @@ import { createGlobalStyle } from 'styled-components';
 import { media } from './helper';
 
 export default createGlobalStyle`
-  html, body {
-    overflow-x: hidden;
-  }
-
   h1 {
     font-weight: 600;
     font-size: ${p => p.theme.fontSize.l};

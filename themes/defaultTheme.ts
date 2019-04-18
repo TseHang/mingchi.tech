@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 const theme: DefaultTheme = {
   borderRadius: '5px',
   headerHeight: '64px',
-  headerHorizontalPadding: '36px',
+  headerHorizontalPadding: '30px',
 
   colors: {
     black: '#000',

@@ -10,38 +10,54 @@ import Button from './Button';
 const Wrapper = styled.div`
   width: 100%;
   margin: 2em auto;
+
+  ${media('desktop')} {
+    padding: 0 10%;
+  }
 `;
 
 const Title = styled.h3`
   margin-right: auto;
+  font-size: ${p => p.theme.fontSize.m};
 `;
 
-const Cover = styled.img`
-  width: 100%;
+const Cover = styled.div<{ src: string }>`
+  cursor: pointer;
+  height: 15em;
+  background: rgba(231, 231, 231, 0.3) url(${p => p.src}) no-repeat center /
+    contain;
 `;
 
 const InfoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-left: 1%;
 `;
 
 const DataWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 
   > figure {
-    width: 47%;
+    width: 46%;
     text-align: center;
-    margin-bottom: 1.5em;
+    margin: 0 1% 1.5em;
 
     ${media('pad')} {
       width: 23%;
     }
   }
 
-  ${media('desktop')} {
-    margin: 0 10%;
+  figcaption {
+    p {
+      font-size: ${p => p.theme.fontSize.s};
+    }
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.65);
+    text-decoration: underline;
   }
 `;
 
@@ -57,18 +73,20 @@ const MoreWrapper = styled.div`
 
 type TProps = {
   data: TProduct[];
+  id?: string;
   title?: string;
   showMore?: boolean;
   className?: string;
 };
 
 const ProductList: React.FunctionComponent<TProps> = ({
+  id,
   data,
   title,
   showMore = false,
   className,
 }) => (
-  <Wrapper className={className}>
+  <Wrapper id={id} className={className}>
     {(title || showMore) && (
       <InfoWrapper>
         {title && <Title>{title}</Title>}
@@ -86,9 +104,17 @@ const ProductList: React.FunctionComponent<TProps> = ({
     )}
     <DataWrapper>
       {data.map(product => (
-        <figure key={product.name}>
-          <Cover src={product.coverUri} />
-          <figcaption>{product.name}</figcaption>
+        <figure key={product.modal}>
+          <Cover
+            src={product.coverUri}
+            onClick={() => window.open(product.pdfUri)}
+          />
+          <figcaption>
+            <b>{product.category}</b>
+            <a href={product.pdfUri} target="_blank">
+              <p>{product.modal}</p>
+            </a>
+          </figcaption>
         </figure>
       ))}
     </DataWrapper>
