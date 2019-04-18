@@ -24,8 +24,13 @@ const Title = styled.h3`
 const Cover = styled.div<{ src: string }>`
   cursor: pointer;
   height: 15em;
+  border-radius: ${p => p.theme.borderRadius};
   background: rgba(231, 231, 231, 0.3) url(${p => p.src}) no-repeat center /
     contain;
+
+  &:hover {
+    border: solid 2px ${p => p.theme.colors.lightGray};
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -50,6 +55,7 @@ const DataWrapper = styled.div`
   }
 
   figcaption {
+    text-align: left;
     p {
       font-size: ${p => p.theme.fontSize.s};
     }
@@ -65,10 +71,6 @@ const MoreWrapper = styled.div`
   margin-left: auto;
   display: flex;
   flex-wrap: nowrap;
-
-  ${media('desktop')} {
-    margin-right: 10%;
-  }
 `;
 
 type TProps = {
