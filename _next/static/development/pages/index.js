@@ -25696,6 +25696,7 @@ var PartnersInfoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["defaul
 
 var Index = function Index() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "MingChi Tech - All Kinds of Capacitor Equipments",
     sections: [{
       name: 'Service',
       id: 'our-service'
