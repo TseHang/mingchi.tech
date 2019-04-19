@@ -41,6 +41,7 @@ const StyledButton = styled(Button)`
 
 export default () => (
   <MainLayout
+    title="MingChi Tech - Products"
     sections={[
       {
         name: 'Masking',

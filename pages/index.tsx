@@ -104,6 +104,7 @@ const PartnersInfoWrapper = styled.div`
 const Index = () => {
   return (
     <MainLayout
+      title="MingChi Tech - All Kinds of Capacitor Equipments"
       sections={[
         {
           name: 'Service',
