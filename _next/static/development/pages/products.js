@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/products.js"],{
 
 /***/ "./components/Button.tsx":
 /*!*******************************!*\
@@ -484,60 +484,6 @@ __webpack_require__.r(__webpack_exports__);
 }, function (p) {
   return p.mode === 'dark' ? '#fff' : 'inherit';
 }));
-
-/***/ }),
-
-/***/ "./components/ServicesList.tsx":
-/*!*************************************!*\
-  !*** ./components/ServicesList.tsx ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils */ "./utils.ts");
-/* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
-
-
-
-
-var configs = [{
-  key: 'equipments',
-  title: 'All kinds of Equipments'
-}, {
-  key: 'customized',
-  title: 'Customized Design'
-}, {
-  key: 'service-first',
-  title: 'Service First, Customer First'
-}, {
-  key: 'global-team',
-  title: 'Global Developing & Researching'
-}];
-var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "ServicesList__Wrapper",
-  componentId: "sc-19o6hdi-0"
-})(["width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;margin:3em auto;> div{width:100%;text-align:center;margin:1em auto;", "{width:50%;}", "{width:25%;}}", "{width:80%;margin-top:10%;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_3__["media"])('pad'), Object(_themes_helper__WEBPACK_IMPORTED_MODULE_3__["media"])('desktop'), Object(_themes_helper__WEBPACK_IMPORTED_MODULE_3__["media"])('desktop'));
-var Icon = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
-  displayName: "ServicesList__Icon",
-  componentId: "sc-19o6hdi-1"
-})(["width:50%;margin-bottom:1em;"]);
-
-var Services = function Services() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Wrapper, null, configs.map(function (service) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: service.key
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
-      src: Object(_utils__WEBPACK_IMPORTED_MODULE_2__["getRelativePath"])("/static/icon-".concat(service.key, ".png"))
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, service.title));
-  }));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Services);
 
 /***/ }),
 
@@ -27842,10 +27788,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.tsx":
-/*!*************************!*\
-  !*** ./pages/index.tsx ***!
-  \*************************/
+/***/ "./pages/products.tsx":
+/*!****************************!*\
+  !*** ./pages/products.tsx ***!
+  \****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27856,15 +27802,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.tsx");
 /* harmony import */ var _components_Section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Section */ "./components/Section.tsx");
-/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Title */ "./components/Title.tsx");
-/* harmony import */ var _components_ServicesList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ServicesList */ "./components/ServicesList.tsx");
-/* harmony import */ var _components_ProductList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/ProductList */ "./components/ProductList.tsx");
-/* harmony import */ var _components_Motto__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Motto */ "./components/Motto.tsx");
+/* harmony import */ var _components_Motto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Motto */ "./components/Motto.tsx");
+/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Title */ "./components/Title.tsx");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Button */ "./components/Button.tsx");
+/* harmony import */ var _components_ProductList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ProductList */ "./components/ProductList.tsx");
 /* harmony import */ var _constants_products__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../constants/products */ "./constants/products.ts");
 /* harmony import */ var _themes_helper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../themes/helper */ "./themes/helper.ts");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils */ "./utils.ts");
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../constants */ "./constants/index.ts");
-
 
 
 
@@ -27877,88 +27821,93 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var StyledSection = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_components_Section__WEBPACK_IMPORTED_MODULE_3__["default"]).withConfig({
-  displayName: "pages__StyledSection",
-  componentId: "ik9pgg-0"
-})(["flex-direction:column;", "{> p{font-size:1.2em;min-width:500px;width:60%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
-var ContentSection = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(StyledSection).withConfig({
-  displayName: "pages__ContentSection",
-  componentId: "ik9pgg-1"
-})(["display:block;", "{display:flex;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
-var slideInKeyframes = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{opacity:0;transform:translateY(40%);}to{opacity:1;transform:translateY(0);}"]);
-var showKeyframes = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes"])(["from{opacity:0;}to{opacity:1;}"]);
-var Logo = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
-  displayName: "pages__Logo",
-  componentId: "ik9pgg-2"
-})(["opacity:0;height:10em;margin:2em auto;animation:", " 2s 0.5s ease-in-out forwards;", "{margin:3em auto;height:13em;}"], slideInKeyframes, Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
-var LogoTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h1.withConfig({
-  displayName: "pages__LogoTitle",
-  componentId: "ik9pgg-3"
-})(["font-size:3em;letter-spacing:3px;margin:0 auto;color:white;opacity:0;line-height:1.2;animation:", " 2.5s 0.5s ease-in-out forwards;", "{line-height:1.5;}"], showKeyframes, Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
-var LogoDescription = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
-  displayName: "pages__LogoDescription",
-  componentId: "ik9pgg-4"
-})(["opacity:0;text-align:center;animation:", " 2.5s 0.5s ease-in-out forwards;"], showKeyframes);
-var PartnersInfoWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "pages__PartnersInfoWrapper",
-  componentId: "ik9pgg-5"
-})(["display:flex;flex-wrap:wrap;ol{list-style:disc;margin-bottom:0;}", "{padding-left:10%;}", "{width:75%;justify-content:space-between;> ol{width:50%;}}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'), Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('desktop'));
-
-var Index = function Index() {
+  displayName: "products__StyledSection",
+  componentId: "sc-3ixvrn-0"
+})(["", "{display:flex;flex-direction:column;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
+var StyledMotto = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_components_Motto__WEBPACK_IMPORTED_MODULE_4__["default"]).withConfig({
+  displayName: "products__StyledMotto",
+  componentId: "sc-3ixvrn-1"
+})(["margin-bottom:0.5em;"]);
+var StyledButton = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(_components_Button__WEBPACK_IMPORTED_MODULE_6__["default"]).withConfig({
+  displayName: "products__StyledButton",
+  componentId: "sc-3ixvrn-2"
+})(["width:50%;max-width:115px;text-align:center;margin-bottom:3em;", "{width:30%;}"], Object(_themes_helper__WEBPACK_IMPORTED_MODULE_9__["media"])('pad'));
+/* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "MingChi Tech - All Kinds of Capacitor Equipments",
+    title: "MingChi Tech - Products",
     sections: [{
-      name: 'Service',
-      id: 'our-service'
+      name: 'Masking',
+      id: 'masking'
     }, {
-      name: 'Products',
-      id: 'products'
+      name: 'Healing Welding Assembling',
+      id: 'healing'
     }, {
-      name: 'Partners',
-      id: 'partners'
+      name: 'Axial Type',
+      id: 'axial-type'
     }, {
-      name: 'About',
-      id: 'about-us'
+      name: 'Test Sorting',
+      id: 'test-sorting'
     }, {
-      name: 'Contact',
-      id: 'contact-us'
+      name: 'Laser Marking',
+      id: 'laser-marking'
+    }, {
+      name: 'Forming Tapping',
+      id: 'forming-tapping'
+    }, {
+      name: 'Spraying',
+      id: 'spraying'
+    }, {
+      name: 'Thermal Press',
+      id: 'thermal-press'
     }]
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledSection, {
-    id: "first-section",
-    fullscreen: true,
-    first: true,
-    flex: true,
-    alignItems: "center",
-    mode: "dark"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logo, {
-    src: Object(_utils__WEBPACK_IMPORTED_MODULE_10__["getRelativePath"])('/static/logo-with-title(white).svg')
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LogoTitle, {
-    style: {
-      textAlign: 'center'
+    first: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledMotto, null, "Want to customize?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledButton, {
+    outline: true,
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_10__["scrollToID"])('contact-us');
     }
-  }, "We offer you all kinds of equipments."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(LogoDescription, null, "Having more than 10 years researching and developing experience in the global market.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ContentSection, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    id: "our-service",
-    title: "Our Services"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We provide all kinds of equipments you need, including AC/DC capacitor, lithium battery, connector, solar energy and a series of mature equipments."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Having more than 10 years researching and developing experience, our technology keeps more mature and excellent. We sell not only extraordinary well in the domestic market but also great in the global market,", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "like European, Japan, Mainland, India, Malaysia, Sri Lanka etc.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ServicesList__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    id: "products",
-    title: "Products"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["productsOnHome"],
-    showMore: true
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Motto__WEBPACK_IMPORTED_MODULE_7__["default"], null, "We offer you all kinds of equipments"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    id: "partners",
-    title: "Strong Partners"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PartnersInfoWrapper, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_11__["partners"].slice(0, 5).map(function (text) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: text
-    }, text);
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, _constants__WEBPACK_IMPORTED_MODULE_11__["partners"].slice(5).map(function (text) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      key: text
-    }, text);
-  })))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+  }, "Contact us"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    title: "Our Products"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "masking",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["MASKING"],
+    title: "Masking Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "healing",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["HEALING"],
+    title: "Healing & Welding Tapping & Assembling Machine "
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "axial-type",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["AXIAL_TYPE"],
+    title: "Axial Type Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "test-sorting",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["TEST_SORTING"],
+    title: "Test Sorting Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "laser-marking",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["LASER_MARKING"],
+    title: "Laser Marking Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "forming-tapping",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["FORMING_TAPPING"],
+    title: "Forming Tapping Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "spraying",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["SPRAYING"],
+    title: "Spraying Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProductList__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "thermal-press",
+    data: _constants_products__WEBPACK_IMPORTED_MODULE_8__["THERMAL_PRESS"],
+    title: "Thremal Press Machine"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledMotto, null, "Nothing meet you? We customize for you!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledButton, {
+    outline: true,
+    onClick: function onClick() {
+      return Object(_utils__WEBPACK_IMPORTED_MODULE_10__["scrollToID"])('contact-us');
+    }
+  }, "Contact us")));
+});
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -27975,7 +27924,7 @@ var Index = function Index() {
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/products")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
@@ -28113,15 +28062,15 @@ function scrollToID(id) {
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************!*\
-  !*** multi ./pages/index.tsx ***!
-  \*******************************/
+/***/ 7:
+/*!**********************************!*\
+  !*** multi ./pages/products.tsx ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__NEXT_REGISTER_PAGE('/', function() {
-module.exports = __webpack_require__(/*! ./pages/index.tsx */"./pages/index.tsx");
+__NEXT_REGISTER_PAGE('/products', function() {
+module.exports = __webpack_require__(/*! ./pages/products.tsx */"./pages/products.tsx");
 
 return { page: module.exports.default }});
 
@@ -28138,5 +28087,5 @@ module.exports = dll_0f247e9cceb355cd81a4;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]));;
-//# sourceMappingURL=index.js.map
+},[[7,"static/runtime/webpack.js","styles"]]]));;
+//# sourceMappingURL=products.js.map
