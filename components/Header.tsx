@@ -35,7 +35,8 @@ const Wrapper = styled(({ hideUp, ...res }) => <Layout.Header {...res} />)<{
     `}
 `;
 
-const LogoTitle = styled.img`
+const CompanyName = styled.img`
+  cursor: pointer;
   height: 1.5rem;
 `;
 
@@ -195,10 +196,12 @@ const Header: React.FunctionComponent<{ sections?: TSection[] }> = ({
   return (
     <>
       <Wrapper hideUp={outOfFirst && !open && y > oldY}>
-        <LogoTitle
-          src={getRelativePath('/static/logo-title.png')}
-          alt="logo-title"
-        />
+        <Link href="/">
+          <CompanyName
+            src={getRelativePath('/static/logo-title.png')}
+            alt="logo-title"
+          />
+        </Link>
         {sections && (
           <>
             <Triangle
