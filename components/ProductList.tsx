@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { TProduct } from '@/constants/products';
 import { media } from '@/themes/helper';
-import { getRelativePath } from '@/utils';
+import { getRelativePath, scrollToID } from '@/utils';
 
 import Button from './Button';
 
@@ -94,9 +94,7 @@ const ProductList: React.FunctionComponent<TProps> = ({
         {title && <Title>{title}</Title>}
         {showMore && (
           <MoreWrapper>
-            <Link href="#contact-us">
-              <Button>Contact us</Button>
-            </Link>
+            <Button onClick={() => scrollToID('contact-us')}>Contact us</Button>
             <Link href="/products" as={getRelativePath('/products')}>
               <Button outline>View all</Button>
             </Link>

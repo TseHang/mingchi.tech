@@ -65,7 +65,7 @@ const Copyright = styled.div`
 const Footer: React.FunctionComponent = () => (
   <>
     <Wrapper>
-      <ContentWrapper>
+      <ContentWrapper id="about-us">
         <Title title="About us" color="white" />
         <p>
           MINGCHI originally was a capacitor equipment company from Taiwan, and

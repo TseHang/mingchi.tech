@@ -103,9 +103,32 @@ const PartnersInfoWrapper = styled.div`
 
 const Index = () => {
   return (
-    <MainLayout>
+    <MainLayout
+      sections={[
+        {
+          name: 'Service',
+          id: 'our-service',
+        },
+        {
+          name: 'Products',
+          id: 'products',
+        },
+        {
+          name: 'Partners',
+          id: 'partners',
+        },
+        {
+          name: 'About',
+          id: 'about-us',
+        },
+        {
+          name: 'Contact',
+          id: 'contact-us',
+        },
+      ]}
+    >
       <StyledSection
-        id="launch-section"
+        id="first-section"
         fullscreen
         first
         flex
@@ -122,7 +145,7 @@ const Index = () => {
         </LogoDescription>
       </StyledSection>
       <ContentSection>
-        <Title title="Our Services" />
+        <Title id="our-service" title="Our Services" />
         <p>
           We provide all kinds of equipments you need, including AC/DC
           capacitor, lithium battery, connector, solar energy and a series of
@@ -137,11 +160,11 @@ const Index = () => {
         </p>
         <ServicesList />
 
-        <Title title="Products" />
+        <Title id="products" title="Products" />
         <ProductList data={productsOnHome} showMore />
         <Motto>We offer you all kinds of equipments</Motto>
 
-        <Title title="Strong Partners" />
+        <Title id="partners" title="Strong Partners" />
         <PartnersInfoWrapper>
           <ol>
             {partners.slice(0, 5).map(text => (

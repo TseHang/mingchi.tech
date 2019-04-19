@@ -7,3 +7,12 @@ export function getRelativePath(path: string): string {
   }
   return path;
 }
+
+export function scrollToID(id: string) {
+  const $el = document.getElementById(id);
+  if ($el) {
+    const { top } = $el.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement!.scrollTop;
+    window.scrollTo(0, scrollTop + top);
+  }
+}

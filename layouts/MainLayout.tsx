@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import '@/assets/style.less';
 
-import Header from '@/components/Header';
+import Header, { TSection } from '@/components/Header';
 import Footer from '@/components/Footer';
 import GlobalStyles from '@/themes/globalStyles';
 import defaultTheme from '@/themes/defaultTheme';
@@ -15,12 +15,14 @@ import Meta from './meta';
 
 type TProps = {
   title?: string;
+  sections?: TSection[];
   children: React.ReactNode;
 };
 
 const MainLayout: React.FunctionComponent<TProps> = ({
   children,
   title = SITE_TITLE,
+  sections,
 }) => (
   <ThemeProvider theme={defaultTheme}>
     <Layout>
@@ -28,7 +30,7 @@ const MainLayout: React.FunctionComponent<TProps> = ({
         <title>{title}</title>
         <Meta />
       </Head>
-      <Header />
+      <Header sections={sections} />
       <Layout.Content>{children}</Layout.Content>
       <Footer />
       <GlobalStyles />

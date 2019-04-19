@@ -29,18 +29,20 @@ const Circle = styled.img`
 `;
 
 type TProps = {
+  id?: string;
   title?: string;
   className?: string;
   color?: string;
 };
 
 const Title: React.FunctionComponent<TProps> = ({
+  id,
   color,
   title,
   className,
   children,
 }) => (
-  <Wrapper className={className} color={color}>
+  <Wrapper className={className} color={color} id={id}>
     <Circle src={getRelativePath('/static/circle.svg')} />
     {title && <h1>{title}</h1>}
     {children}

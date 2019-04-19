@@ -19,6 +19,7 @@ import {
   LASER_MARKING,
 } from '@/constants/products';
 import { media } from '@/themes/helper';
+import { scrollToID } from '@/utils';
 
 const StyledSection = styled(Section)`
   ${media('pad')} {
@@ -39,28 +40,85 @@ const StyledButton = styled(Button)`
 `;
 
 export default () => (
-  <MainLayout>
+  <MainLayout
+    sections={[
+      {
+        name: 'Masking',
+        id: 'masking',
+      },
+      {
+        name: 'Healing Welding Assembling',
+        id: 'healing',
+      },
+      {
+        name: 'Axial Type',
+        id: 'axial-type',
+      },
+      {
+        name: 'Test Sorting',
+        id: 'test-sorting',
+      },
+      {
+        name: 'Laser Marking',
+        id: 'laser-marking',
+      },
+      {
+        name: 'Forming Tapping',
+        id: 'forming-tapping',
+      },
+      {
+        name: 'Spraying',
+        id: 'spraying',
+      },
+      {
+        name: 'Thermal Press',
+        id: 'thermal-press',
+      },
+    ]}
+  >
     <StyledSection first>
       <StyledMotto>Want to customize?</StyledMotto>
-      <Link href="#contact-us">
-        <StyledButton outline>Contact us</StyledButton>
-      </Link>
+      <StyledButton outline onClick={() => scrollToID('contact-us')}>
+        Contact us
+      </StyledButton>
       <Title title="Our Products" />
-      <ProductList data={MASKING} title="Masking Machine" />
+      <ProductList id="masking" data={MASKING} title="Masking Machine" />
       <ProductList
+        id="healing"
         data={HEALING}
         title="Healing & Welding Tapping & Assembling Machine "
       />
-      <ProductList data={AXIAL_TYPE} title="Axial Type Machine" />
-      <ProductList data={TEST_SORTING} title="Test Sorting Machine" />
-      <ProductList data={LASER_MARKING} title="Laser Marking Machine" />
-      <ProductList data={FORMING_TAPPING} title="Forming Tapping Machine" />
-      <ProductList data={SPRAYING} title="Spraying Machine" />
-      <ProductList data={THERMAL_PRESS} title="Thremal Press Machine" />
+      <ProductList
+        id="axial-type"
+        data={AXIAL_TYPE}
+        title="Axial Type Machine"
+      />
+      <ProductList
+        id="test-sorting"
+        data={TEST_SORTING}
+        title="Test Sorting Machine"
+      />
+      <ProductList
+        id="laser-marking"
+        data={LASER_MARKING}
+        title="Laser Marking Machine"
+      />
+      <ProductList
+        id="forming-tapping"
+        data={FORMING_TAPPING}
+        title="Forming Tapping Machine"
+      />
+      <ProductList id="spraying" data={SPRAYING} title="Spraying Machine" />
+      <ProductList
+        id="thermal-press"
+        data={THERMAL_PRESS}
+        title="Thremal Press Machine"
+      />
       <StyledMotto>Nothing meet you? We customize for you!</StyledMotto>
-      <Link href="#contact-us">
-        <StyledButton outline>Contact us</StyledButton>
-      </Link>
+
+      <StyledButton outline onClick={() => scrollToID('contact-us')}>
+        Contact us
+      </StyledButton>
     </StyledSection>
   </MainLayout>
 );
