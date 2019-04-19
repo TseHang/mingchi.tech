@@ -33,10 +33,14 @@ const StyledMotto = styled(Motto)`
 `;
 
 const StyledButton = styled(Button)`
-  width: 30%;
+  width: 50%;
   max-width: 115px;
   text-align: center;
   margin-bottom: 3em;
+
+  ${media('pad')} {
+    width: 30%;
+  }
 `;
 
 export default () => (

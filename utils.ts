@@ -1,3 +1,4 @@
+import { animateScroll } from 'react-scroll';
 import { GITHUB, PROJ_NAME } from './environment';
 
 export function getRelativePath(path: string): string {
@@ -13,9 +14,6 @@ export function scrollToID(id: string) {
   if ($el) {
     const { top } = $el.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement!.scrollTop;
-    window.scrollTo({
-      top: scrollTop + top,
-      behavior: 'smooth',
-    });
+    animateScroll.scrollTo(scrollTop + top);
   }
 }
