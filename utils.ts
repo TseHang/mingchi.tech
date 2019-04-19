@@ -13,6 +13,9 @@ export function scrollToID(id: string) {
   if ($el) {
     const { top } = $el.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement!.scrollTop;
-    window.scrollTo(0, scrollTop + top);
+    window.scrollTo({
+      top: scrollTop + top,
+      behavior: 'smooth',
+    });
   }
 }
