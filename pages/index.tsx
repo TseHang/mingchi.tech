@@ -156,8 +156,8 @@ const Index = () => {
           Having more than 10 years researching and developing experience, our
           technology keeps more mature and excellent. We sell not only
           extraordinary well in the domestic market but also great in the global
-          market, like European, Japan, Mainland, India, Malaysia, Sri Lanka
-          etc.
+          market,{' '}
+          <b>like European, Japan, Mainland, India, Malaysia, Sri Lanka etc.</b>
         </p>
         <ServicesList />
 

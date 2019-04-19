@@ -68,19 +68,23 @@ const Footer: React.FunctionComponent = () => (
       <ContentWrapper id="about-us">
         <Title title="About us" color="white" />
         <p>
-          MINGCHI originally was a capacitor equipment company from Taiwan, and
-          now is devoted to producing all kinds of equipments. Having more than
-          10 years researching and developing experience, we have our own strong
-          and stable ability to customize products with customer’s requirements.
-          Our main supporting and producing factory is in China mainland and
-          another is in Singapore..
+          MINGCHI TECH originally was a capacitor equipment company from Taiwan,
+          and now is devoted to producing all kinds of equipments. Having more
+          than 10 years researching and developing experience, we have our own
+          strong and stable ability to customize products with customer’s
+          requirements. Our main supporting and producing factory is in China
+          mainland and others are in Singapore and Malaysia.
         </p>
         <p>
           Besides the capacitors equipment, we also provide other design of
-          automatic equipment, such as connector, dolar energy etc., includes
-          any customized requirements. In the future, we will keep renewing our
-          technology and make our products more mature and excellent to solve
-          the problem of life, industry and the words.
+          automatic equipment,{' '}
+          <b>
+            such as connector, solar energy etc., including any customized
+            requirements.
+          </b>{' '}
+          In the future, we will keep renewing our technology and make our
+          products more mature and excellent to solve the problem of life,
+          industry and the words.
         </p>
       </ContentWrapper>
       <ContentWrapper id="contact-us">

@@ -15,6 +15,10 @@ export default createGlobalStyle`
   p {
     font-weight: 300;
     font-size: 1.1em;
+
+    b {
+      font-weight: 500;
+    }
   }
 
   ol, ul {
