@@ -62,6 +62,20 @@ module.exports = withBundleAnalyzer(
           }),
         ];
 
+        const originalEntry = config.entry;
+        config.entry = async () => {
+          const entries = await originalEntry();
+
+          if (
+            entries['main.js'] &&
+            !entries['main.js'].includes('./scripts/polyfills.js')
+          ) {
+            entries['main.js'].unshift('./scripts/polyfills.js');
+          }
+
+          return entries;
+        };
+
         return config;
       },
     }),

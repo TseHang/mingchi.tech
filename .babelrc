@@ -1,5 +1,18 @@
 {
-  "presets": ["next/babel", "@zeit/next-typescript/babel"],
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": { 
+            "browsers": ["last 2 versions", "safari >= 7"],
+            "ie": 9
+          }
+        }
+      }
+    ],
+    "@zeit/next-typescript/babel"
+  ],
   "plugins": [
     ["@babel/plugin-proposal-decorators", { "decoratorsBeforeExport": true }],
     ["@babel/plugin-proposal-class-properties"],
